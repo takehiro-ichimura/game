@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-lg-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <small class="float-right"><%= post.created_at.strftime("%Y-%m-%d") %></small>
+            <h4><%= post.title %></h4>
+            <div class="card-text"><%= post.content.truncate(150) %></div>
+            <small class="text-muted"><%= post.tags %></small>
+            <br />
+            <small class="float-right"><%= link_to 'さらに見る', post %></small>
+          </div>
+        </div>
+    </div>
+  <% end %>
+</div>
