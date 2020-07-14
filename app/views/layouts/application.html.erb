@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="navbar navbar-expand navbar-dark bg-dark">
+          <a href="/" class="navbar-brand">GAME</a>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <%= link_to '記事一覧', '/posts', {class: "nav-link"} %>
+              </li>
+              <% if current_user %>
+                <li class="nav-item">
+                  <%= link_to 'admin', '/admin', {class: "nav-link"} %>
+                </li>
+              <% end %>
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+              <input class="form-control" type="text" placeholder="Search">
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
