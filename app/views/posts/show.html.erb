@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @post.title %></h2>
-<p><%= @post.created_at.strftime("%Y-%m-%d") %></p>
-<p><%= @post.tags %></p>
+<div class="border-bottom">
+  <h2><%= @post.title %></h2>
+  <% if @post.public == false %>
+    <small>非公開</small>
+  <% end %>
+  <small><%= @post.created_at.strftime("%Y-%m-%d") %></small><br />
+  <small><%= @post.tags %></small>
+</div>
 
-<%= @post.content %>
+<%= @post.content.html_safe %>
 
 <br />
 <% if current_user %>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
 <% end %>
+<%= link_to '一覧に戻る', posts_path %>

@@ -26,6 +26,11 @@
     <%= form.text_field :tags %>
   </div>
 
+  <div class="field">
+    <%= form.label :公開 %><br />
+    <%= form.check_box :public, id: :public,:as => :boolean%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
