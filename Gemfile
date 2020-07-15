@@ -60,3 +60,7 @@ gem 'rails_admin'
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg'
+end
