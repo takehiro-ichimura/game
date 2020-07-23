@@ -12,8 +12,8 @@
             <% if post.public == false %>
               <small>非公開</small>
             <% end %>
-            <div class="card-text"><%= post.content.truncate(150) %></div>
-            <small class="text-muted"><%= post.tags %></small>
+            <div class="card-text"><%= post.movetag.html_safe %></div>
+            <small class="texrat-muted"><%= post.tags %></small>
             <br />
             <small class="float-right"><%= link_to 'さらに見る', post %></small>
           </div>

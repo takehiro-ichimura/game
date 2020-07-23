@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_140408) do
+ActiveRecord::Schema.define(version: 2020_07_23_115109) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_140408) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "public"
+    t.string "movetag"
   end
 
   create_table "users", force: :cascade do |t|

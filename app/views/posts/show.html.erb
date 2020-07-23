@@ -5,13 +5,13 @@
   <% if @post.public == false %>
     <small>非公開</small>
   <% end %>
-  <small><%= @post.created_at.strftime("%Y-%m-%d") %></small><br />
-  <small><%= @post.tags %></small>
 </div>
 
 <%= @post.content.html_safe %>
 
 <br />
+  <small><%= @post.created_at.strftime("%Y-%m-%d") %></small><br />
+  <small><%= @post.tags %></small>
 <% if current_user %>
   <%= link_to 'Edit', edit_post_path(@post) %>
 <% end %>
