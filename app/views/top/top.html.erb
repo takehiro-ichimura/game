@@ -7,9 +7,12 @@
           <div class="card-body">
             <div class="row">
               <div class="col-7">
-                <%= image_tag post.image.to_s %>
-              </div>
+                <%= image_tag post.image.to_s, class: 'image' %>
+              </div>            
+               <br>
+               <br>
               <div class="col-5">
+<br>
                 <h4><%= post.title %></h4>
                 <div class="card-text"><%= post.content.truncate(150) %></div>
                 <br />
