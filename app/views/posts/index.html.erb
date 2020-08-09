@@ -33,12 +33,12 @@
                 </div>
               </div>
               <div class="col-5">
-                <% if post.title.length < 30 %>
+                <% if post.title.length < 40 %>
                   <div><%= post.title %></div>
                 <% else %>
-                  <div><%= post.title.truncate(30) %></div>
+                  <div><%= post.title.truncate(40) %></div>
                 <% end %>
-                <% small_length = 30 - post.title.length %>
+                <% small_length = 40 - post.title.length %>
                 <% if small_length > 0 %>
                   <small class="card-text text-muted"><%= post.content.truncate(small_length) %></small>
                 <% end %>
