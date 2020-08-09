@@ -1,20 +1,58 @@
+<style>
+  .movie{
+    position:relative;
+    width:100%;
+    height:0;
+    padding-top:56%;
+  }
+  .movie iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<div class="border-bottom">
-  <h2><%= @post.title %></h2>
-  <% if @post.public == false %>
-    <small>非公開</small>
-  <% end %>
+<div class="row">
+  <div class="col-12">
+    <div class="movie">
+      <% if @post.movetag %>
+        <div>
+          <%= @post.movetag.html_safe %>
+        </div>
+      <% end %>
+    </div>
+    <div class="p-2">
+      <div>
+        <small><%= @post.tags %></small>
+      </div> 
+      <h2><%= @post.title %>
+        <% if @post.public == false %>
+          <small>非公開</small>
+        <% end %>
+      </h2>
+      <div class="text-muted border-bottom">
+        <span>
+          <small><%= @post.created_at.strftime("%Y-%m-%d") %></small>
+        </span>
+      </div>
+      <% if @post.content %>
+        <div class="pt-2">
+          <%= @post.content %>
+        </div>
+      <% end %>
+      <%# image_tag @post.image.to_s , class: 'image' %>
+      <div class="pt-3">
+        <div>
+          <% if current_user %>
+            <%= link_to 'Edit', edit_post_path(@post) %>
+          <% end %>
+          <%= link_to '一覧に戻る', posts_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<% if @post.content %>
-  <%= @post.content.html_safe %>
-<% end %>
-<%= image_tag @post.image.to_s , class: 'image' %>
-<br />
-  <small><%= @post.created_at.strftime("%Y-%m-%d") %></small><br />
-  <small><%= @post.tags %></small>
-<% if current_user %>
-  <%= link_to 'Edit', edit_post_path(@post) %>
-<% end %>
-<%= link_to '一覧に戻る', posts_path %>
