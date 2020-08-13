@@ -1,24 +1,54 @@
-<p id="notice"><%= notice %></p>
+<style>
+  .thumbnail{
+    position:relative;
+    width:100%;
+    height:0;
+    padding-top:56%;
+  }
+  .thumbnail img{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+  }
+</style>
 
-<h1 class="h3">記事一覧</h1>
+<p id="notice"><%= notice %></p>
 
 <div class="row">
   <% @posts.each do |post| %>
-    <% if post.public == false or current_user %>
-      <div class="col-lg-4">
-        <div class="card mb-4 shadow-sm">
+    <% if post.public == true or current_user %>
+      <div class="col-lg-6 pb-1">
+        <div class="card shadow-sm">
           <div class="card-body">
-            <h5><%= post.title %></h4>
-            <% if post.public == false %>
-              <small>非公開</small>
-            <% end %>
-            <% if post.movetag %>
-              <div class="card-text"><%= post.movetag.html_safe %></div>
-            <% end %>
-            <small class="texrat-muted"><%= post.tags %></small>
-            <br />
-            <small class="float-right"><%= link_to 'さらに見る', post %></small>
+            <div class="row">
+              <div class="col-7">
+                <div class="thumbnail">
+                    <% if post.image_out_url %>
+                    <img src="<%= post.image_out_url %>">
+                  <% else %>
+                    <%= image_tag post.image.to_s, class: 'image' %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="col-5">
+                <% if post.title.length < 40 %>
+                  <div><%= post.title %></div>
+                <% else %>
+                  <div><%= post.title.truncate(40) %></div>
+                <% end %>
+                <% small_length = 40 - post.title.length %>
+                <% if small_length > 0 %>
+                  <small class="card-text text-muted"><%= post.content.truncate(small_length) %></small>
+                <% end %>
+                <div>
+                  <small class="text-muted"><%= post.created_at.strftime("%Y-%m-%d") %></small>
+                </div>
+              </div>
+            </div>
           </div>
+          <%= link_to '', post %>
         </div>
       </div>
     <% end %>
