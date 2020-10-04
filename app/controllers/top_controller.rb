@@ -4,6 +4,7 @@ class TopController < ApplicationController
     key = "pSCglKF5uFWoSzJvPCcI"
     url =  "https://api.mozambiquehe.re/bridge?version=4&platform=PC&player=HeyImLifeline&auth=#{key}"
     uri = URI.parse("https://jsonplaceholder.typicode.com/todos/1")
-    @response = Net::HTTP.get_response(uri).body
+    json = Net::HTTP.get(uri)
+    @result = JSON.parse(json)
   end
 end
