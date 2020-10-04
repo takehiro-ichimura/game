@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_075125) do
+ActiveRecord::Schema.define(version: 2020_09_26_053456) do
+
+  create_table "genres", force: :cascade do |t|
+    t.string "genre_name"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
