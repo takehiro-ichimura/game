@@ -1,3 +1,5 @@
+require "net/http"
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :sign_in_required, only: [:new, :edit, :update, :destroy]
