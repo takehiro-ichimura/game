@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_053456) do
+ActiveRecord::Schema.define(version: 2020_10_11_075946) do
 
   create_table "genres", force: :cascade do |t|
     t.string "genre_name"
@@ -19,13 +19,20 @@ ActiveRecord::Schema.define(version: 2020_09_26_053456) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.string "tags"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "public"
     t.string "movetag"
     t.string "image"
     t.string "image_out_url"
+    t.integer "tags_id"
+    t.index ["tags_id"], name: "index_posts_on_tags_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name"
+    t.integer "posts_id"
+    t.index ["posts_id"], name: "index_tags_on_posts_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +47,6 @@ ActiveRecord::Schema.define(version: 2020_09_26_053456) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "tags", column: "tags_id"
+  add_foreign_key "tags", "posts", column: "posts_id"
 end

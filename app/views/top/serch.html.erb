@@ -1,0 +1,77 @@
+  <% begin %>
+    <%= @result["global"]["name"] %>
+  <br>
+    <%= @result["global"]["uid"] %>
+  <br>
+    <%= @result["global"]["avatar"] %>
+  <br>
+    <%= @result["global"]["platform"] %>
+  <br>
+    <%= @result["global"]["level"] %>
+  <br>
+    <%= @result["global"]["toMextLevelPercent"] %>
+  <br>
+    <%= @result["global"]["internalUpdateCount"] %>
+  <br>
+    <%= @result["global"]["rank"]["rankScore"] %>
+  <br>
+    <%= @result["global"]["rank"]["rankName"] %>
+  <br>
+    <%= @result["global"]["rank"]["rankDiv"] %>
+  <br>
+    <%= @result["global"]["rank"]["rankImg"] %>
+  <br>  
+
+
+
+
+    <%= @result["legends"]["selected"]["Lifeline"]["kills"] %>
+  <br>  
+     <%= @result["legends"]["selected"]["Lifeline"]["droppsd"] %>
+  <br>  
+     <%= @result["legends"]["selected"]["Lifeline"]["wins_season_4"] %>
+  <br>  
+
+
+    <%= @result["all"]["Bangalore"]["kills"] %>
+  <br>  
+    <%= @result["all"]["Bangalore"]["creaping_bsrrage_damage"] %>
+  <br>  
+    <%= @result["all"]["Bangalore"]["wins_season"] %>
+  <br>  
+
+
+
+
+
+
+  
+    <%= @result["all"]["bloodhound"]["kills"] %>
+  <br>
+    <%= @result["all"]["bloodhound"]["top_3"] %>
+  <br>
+    <%= @result["all"]["bloodhound"]["beast_of_the_hunt_kills"] %>
+  <br>
+    <%= @result["all"]["bloodhound"]["kills_season"] %>
+  <br>
+
+
+
+    <%= @result["all"]["Lifeline"]["kills"] %>
+  <br>
+    <%= @result["all"]["Lifeline"]["damage"] %>
+  <br>
+    <%= @result["alll"]["Lifeline"]["games_played"] %>
+  <br>
+    <%= @result["all"]["Lifeline"]["dorppoed_items_for_suquadmates"] %>
+  <br>
+
+
+    
+
+  
+
+  
+  <% rescue => exception %>
+    <%= @noresult%>
+  <% end %>

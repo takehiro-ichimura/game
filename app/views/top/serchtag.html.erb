@@ -63,13 +63,3 @@
     <% end %>
   <% end %>
   <div class="p-2">
-  ユーザー検索
-    <%= form_with(url: top_serch_path, method: :get, local: true, html:{class:"form-inline my-2 my-lg-0"},return_url: request.original_url) do |u| %>
-      <%= u.text_field :username, class:"form-control mr-sm-2", placeholder:"ユーザーネーム" %>
-      <div class="pr-3">
-        <%= u.submit "検索", class:"btn btn-secondary my-2 my-sm-0" %>
-      </div>
-    <% end %>
-</div>
-
-</div>

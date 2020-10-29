@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/' => 'top#top'
+  get 'top/serch' => 'top#serch'
+  get 'top/serchtag' => 'top#serchtag'
   resources :posts
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
