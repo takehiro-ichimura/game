@@ -1,4 +1,5 @@
   <% begin %>
+
     <%= @result["global"]["name"] %>
   <br>
     <%= @result["global"]["uid"] %>
@@ -22,22 +23,23 @@
     <%= @result["global"]["rank"]["rankImg"] %>
   <br>  
 
-
-
+  legends-selected
+  <br>
 
     <%= @result["legends"]["selected"]["Lifeline"]["kills"] %>
   <br>  
-     <%= @result["legends"]["selected"]["Lifeline"]["droppsd"] %>
+     <%= @result["legends"]["selected"]["Lifeline"]["dropped_items_for_squadmates"] %>
   <br>  
      <%= @result["legends"]["selected"]["Lifeline"]["wins_season_4"] %>
   <br>  
 
-
-    <%= @result["all"]["Bangalore"]["kills"] %>
+  legends-all-Bangalore
+  <br>
+    <%= @result["legends"]["all"]["Bangalore"]["kills"] %>
   <br>  
-    <%= @result["all"]["Bangalore"]["creaping_bsrrage_damage"] %>
+    <%= @result["legends"]["all"]["Bangalore"]["creeping_barrage_damage"] %>
   <br>  
-    <%= @result["all"]["Bangalore"]["wins_season"] %>
+    <%= @result["legends"]["all"]["Bangalore"]["wins_season_1"] %>
   <br>  
 
 
@@ -45,25 +47,26 @@
 
 
 
-  
-    <%= @result["all"]["bloodhound"]["kills"] %>
+  legends-all-bloodhound
   <br>
-    <%= @result["all"]["bloodhound"]["top_3"] %>
+    <%= @result["legends"]["all"]["Bloodhound"]["kills"] %>
   <br>
-    <%= @result["all"]["bloodhound"]["beast_of_the_hunt_kills"] %>
+    <%= @result["legends"]["all"]["Bloodhound"]["top_3"] %>
   <br>
-    <%= @result["all"]["bloodhound"]["kills_season"] %>
+    <%= @result["legends"]["all"]["Bloodhound"]["beast_of_the_hunt_kills"] %>
+  <br>
+    <%= @result["legends"]["all"]["Bloodhound"]["kills_season_4"] %>
   <br>
 
-
-
-    <%= @result["all"]["Lifeline"]["kills"] %>
+  legends-all-Lifeline
   <br>
-    <%= @result["all"]["Lifeline"]["damage"] %>
+    <%= @result["legends"]["all"]["Lifeline"]["kills"] %>
   <br>
-    <%= @result["alll"]["Lifeline"]["games_played"] %>
+    <%= @result["legends"]["all"]["Lifeline"]["damage"] %>
   <br>
-    <%= @result["all"]["Lifeline"]["dorppoed_items_for_suquadmates"] %>
+    <%= @result["legends"]["all"]["Lifeline"]["games_played"] %>
+  <br>
+    <%= @result["legends"]["all"]["Lifeline"]["dropped_items_for_suquadmates"] %>
   <br>
 
 
